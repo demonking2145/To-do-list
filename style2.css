@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+    
+}
+body {
+    background: linear-gradient(135deg, #153677, #4e085f);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+
+}
+
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    padding: 10px;
+    
+}
+
+.navigation-buttons {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.navigation-buttons button {
+    font-size: 1em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 180px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    white-space: nowrap; /* Ensure single-line text */
+    overflow: hidden; /* Handle overflow */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+.navigation-buttons button .icon {
+    margin-right: 10px;
+}
+
+#to-next-page {
+    background-color:#8b37d5;
+}
+
+#to-next-page:hover {
+    background-color: #0056b3;
+    transform: translateX(5px);
+}
+
+#to-prev-page {
+    background-color: #0056b3;
+}
+
+#to-prev-page:hover {
+    background-color: #8b37d5;
+    transform: translateX(5px);
+}
+.todo-app{
+    width: 100%;
+    max-width: 540px;
+    background-color: rgb(27, 30, 32);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+
+    box-sizing: border-box;    
+}
+.todo-app h2{
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.todo-app img{
+    width: 30px;
+    margin-left: 10px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    background-color: rgb(42, 47, 48);
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #ffffff;
+    padding: 10px;
+}
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background-color: rgb(255, 15, 0);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    list-style-image: initial;
+
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+ul li.checked{
+    color: rgb(255, 255, 255);
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url(checked.png);
+}
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+ul li span:hover{
+    background-color: rgb(42, 47, 48);
+}
+
+
+.hidden {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1s, transform 1s;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s, transform 1s;
+}
+
+
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.15), transparent);
+    z-index: 0;
+    pointer-events: none;
+    animation: moveShapes 20s infinite alternate;
+}
+
+body::before {
+    width: 400px;   
+    height: 400px;
+    top: 5%;
+    left: 4.8%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.2), transparent);
+}
+
+body::after {
+    width: 350px;
+    height: 350px;
+    bottom: 5%;
+    right: 15%;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.2), transparent);
+}
